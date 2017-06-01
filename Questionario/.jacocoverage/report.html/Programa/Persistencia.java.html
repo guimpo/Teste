@@ -13,7 +13,7 @@ import java.io.PrintWriter;
  *
  * @author pantera
  */
-<span class="nc" id="L16">public class Persistencia {</span>
+<span class="fc" id="L16">public class Persistencia {</span>
     
     Questionario q;
     String caminho;
@@ -31,8 +31,8 @@ import java.io.PrintWriter;
     
     public String obterCaminho (){
         File ar1;
-<span class="nc" id="L34">        ar1 = new File(caminho);</span>
-<span class="nc" id="L35">        return ar1.getParent();</span>
+<span class="fc" id="L34">        ar1 = new File(caminho);</span>
+<span class="fc" id="L35">        return ar1.getParent();</span>
        
     }
     public boolean salvarRespostas(Questionario q, Usuario u){
@@ -50,19 +50,19 @@ import java.io.PrintWriter;
         
 <span class="nc" id="L51">            arq.close();</span>
 <span class="nc" id="L52">            return true;</span>
-<span class="nc" id="L53">        } catch (IOException ex) {</span>
-<span class="nc" id="L54">            ex.printStackTrace();</span>
-<span class="nc" id="L55">            return false;</span>
+<span class="fc" id="L53">        } catch (IOException ex) {</span>
+<span class="fc" id="L54">            ex.printStackTrace();</span>
+<span class="fc" id="L55">            return false;</span>
         }
         
     }
 
     public String getCaminho() {
-<span class="nc" id="L61">        return caminho;</span>
+<span class="fc" id="L61">        return caminho;</span>
     }
 
     public void setCaminho(String caminho) {
-<span class="nc" id="L65">        this.caminho = caminho;</span>
-<span class="nc" id="L66">    }</span>
+<span class="fc" id="L65">        this.caminho = caminho;</span>
+<span class="fc" id="L66">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
