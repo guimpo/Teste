@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RespondePergunta.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Questionario&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interface</a> &gt; <span class="el_source">RespondePergunta.java</span></div><h1>RespondePergunta.java</h1><pre class="source lang-java linenums">package Interface;
+
+import Programa.BuscarPerguntas;
+import Programa.Persistencia;
+import Programa.Senha;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class RespondePergunta extends javax.swing.JFrame {
+    Programa.Questionario questionario;
+    Persistencia p;
+<span class="nc" id="L12">    public RespondePergunta() {</span>
+<span class="nc" id="L13">        initComponents();</span>
+<span class="nc" id="L14">        this.setExtendedState(JFrame.MAXIMIZED_BOTH);</span>
+<span class="nc" id="L15">    }</span>
+    DadosUsuario iq;
+<span class="nc" id="L17">    Integer verificaSeFoiCarregadoquestionario = 0;</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L23">        jDesktopPane1 = new javax.swing.JDesktopPane();</span>
+<span class="nc" id="L24">        jMenuBar1 = new javax.swing.JMenuBar();</span>
+<span class="nc" id="L25">        Arquivo = new javax.swing.JMenu();</span>
+<span class="nc" id="L26">        menuIniciarQuestionario = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L27">        menuCarregarQuestionario = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L28">        jMenuItem1 = new javax.swing.JMenuItem();</span>
+
+<span class="nc" id="L30">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L31">        setTitle(&quot;Responder Questionário&quot;);</span>
+
+<span class="nc" id="L33">        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);</span>
+<span class="nc" id="L34">        jDesktopPane1.setLayout(jDesktopPane1Layout);</span>
+<span class="nc" id="L35">        jDesktopPane1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L36">            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L37">            .addGap(0, 625, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L39">        jDesktopPane1Layout.setVerticalGroup(</span>
+<span class="nc" id="L40">            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L41">            .addGap(0, 413, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L44">        Arquivo.setText(&quot;Arquivo&quot;);</span>
+
+<span class="nc" id="L46">        menuIniciarQuestionario.setText(&quot;Iniciar Questionário&quot;);</span>
+<span class="nc" id="L47">        menuIniciarQuestionario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L49">                menuIniciarQuestionarioActionPerformed(evt);</span>
+<span class="nc" id="L50">            }</span>
+        });
+<span class="nc" id="L52">        Arquivo.add(menuIniciarQuestionario);</span>
+
+<span class="nc" id="L54">        menuCarregarQuestionario.setText(&quot;Carregar Questionário&quot;);</span>
+<span class="nc" id="L55">        menuCarregarQuestionario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L57">                menuCarregarQuestionarioActionPerformed(evt);</span>
+<span class="nc" id="L58">            }</span>
+        });
+<span class="nc" id="L60">        Arquivo.add(menuCarregarQuestionario);</span>
+
+<span class="nc" id="L62">        jMenuItem1.setText(&quot;Mostrar Estatisticas&quot;);</span>
+<span class="nc" id="L63">        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L65">                jMenuItem1ActionPerformed(evt);</span>
+<span class="nc" id="L66">            }</span>
+        });
+<span class="nc" id="L68">        Arquivo.add(jMenuItem1);</span>
+
+<span class="nc" id="L70">        jMenuBar1.add(Arquivo);</span>
+
+<span class="nc" id="L72">        setJMenuBar(jMenuBar1);</span>
+
+<span class="nc" id="L74">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L75">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L76">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L77">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L78">            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)</span>
+        );
+<span class="nc" id="L80">        layout.setVerticalGroup(</span>
+<span class="nc" id="L81">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L82">            .addComponent(jDesktopPane1)</span>
+        );
+
+<span class="nc" id="L85">        pack();</span>
+<span class="nc" id="L86">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void menuIniciarQuestionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuIniciarQuestionarioActionPerformed
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        if (iq == null){</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">            if(verificaSeFoiCarregadoquestionario == 1){</span>
+<span class="nc" id="L91">                iq = new DadosUsuario(this);</span>
+<span class="nc" id="L92">                jDesktopPane1.add(iq);</span>
+<span class="nc" id="L93">                iq.setPosicao();</span>
+<span class="nc" id="L94">                iq.setVisible(true);</span>
+            }else{
+<span class="nc" id="L96">                JOptionPane.showMessageDialog(null,&quot;Carregue um questionario primeiramente&quot;,&quot;Erro&quot;,JOptionPane.CANCEL_OPTION);</span>
+            }
+        }else{
+<span class="nc" id="L99">            JOptionPane.showMessageDialog(null,&quot;Já existe um questionario em andamento&quot;,&quot;Erro&quot;,JOptionPane.CANCEL_OPTION);</span>
+        }
+<span class="nc" id="L101">    }//GEN-LAST:event_menuIniciarQuestionarioActionPerformed</span>
+
+    private void menuCarregarQuestionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCarregarQuestionarioActionPerformed
+<span class="nc" id="L104">        String showInputDialog = JOptionPane.showInputDialog(this, &quot;Informe a senha&quot;, &quot;Tela de senha&quot;, WIDTH);</span>
+<span class="nc" id="L105">        Senha s = new Senha();        </span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if (s.recebeSenha(showInputDialog)){</span>
+<span class="nc" id="L107">            LerArquivo la = new LerArquivo();</span>
+<span class="nc" id="L108">            String Caminho = la.retornaCaminho();</span>
+            //*****************************************************
+<span class="nc" id="L110">            p = new Persistencia();     //feito</span>
+<span class="nc" id="L111">            p.setCaminho(Caminho);</span>
+<span class="nc" id="L112">            questionario = p.getQuestionario(Caminho); //feito</span>
+            //*****************************************************
+<span class="nc" id="L114">            verificaSeFoiCarregadoquestionario = 1;</span>
+<span class="nc" id="L115">        }else{</span>
+<span class="nc" id="L116">            JOptionPane.showMessageDialog(null,&quot;Senha Inválida&quot;,&quot;Erro&quot;,JOptionPane.CANCEL_OPTION);</span>
+        }
+<span class="nc" id="L118">    }//GEN-LAST:event_menuCarregarQuestionarioActionPerformed</span>
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+<span class="nc" id="L121">        Estatistica es = new Estatistica();</span>
+<span class="nc" id="L122">        jDesktopPane1.add(es);</span>
+<span class="nc" id="L123">        es.setPosicao();</span>
+<span class="nc" id="L124">        es.setVisible(true);</span>
+<span class="nc" id="L125">    }//GEN-LAST:event_jMenuItem1ActionPerformed</span>
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //&lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot; Look and feel setting code (optional) &quot;&gt;
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+<span class="nc bnc" id="L137" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L139">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L140">                    break;</span>
+                }
+            }
+<span class="nc" id="L143">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L144">            java.util.logging.Logger.getLogger(RespondePergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L145">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L146">            java.util.logging.Logger.getLogger(RespondePergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L147">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L148">            java.util.logging.Logger.getLogger(RespondePergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L149">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L150">            java.util.logging.Logger.getLogger(RespondePergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L151">        }</span>
+        //&lt;/editor-fold&gt;
+
+        /* Create and display the form */
+<span class="nc" id="L155">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+            public void run() {
+<span class="nc" id="L157">                RespondePergunta rp = new RespondePergunta();</span>
+<span class="nc" id="L158">                rp.setLocationRelativeTo(null);</span>
+<span class="nc" id="L159">                rp.setVisible(true);</span>
+<span class="nc" id="L160">            }</span>
+        });
+<span class="nc" id="L162">    }</span>
+    public void Destruir(){
+<span class="nc" id="L164">        this.iq = null;</span>
+<span class="nc" id="L165">    }</span>
+    public void Carregar(Questionario q){
+<span class="nc" id="L167">        jDesktopPane1.removeAll();</span>
+<span class="nc" id="L168">        jDesktopPane1.add(q);</span>
+<span class="nc" id="L169">        jDesktopPane1.repaint();</span>
+<span class="nc" id="L170">        q.setVisible(true);</span>
+<span class="nc" id="L171">    }</span>
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Arquivo;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem menuCarregarQuestionario;
+    private javax.swing.JMenuItem menuIniciarQuestionario;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

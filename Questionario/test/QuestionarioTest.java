@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import Programa.Pergunta;
+import Programa.Questionario;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,34 +15,26 @@ import static org.junit.Assert.*;
  */
 public class QuestionarioTest
 {
-    
-    public QuestionarioTest()
+    @Test
+    public void ct01()
     {
+        Questionario q = new Questionario();
+        Pergunta p = new Pergunta();
+        
+        String inNome = "questionarioNome",
+               inDescQ = "questionárioDescricao",
+               inId = "01",
+               inDescP = "pergunta";
+        
+        q.setNome(inNome);
+        q.setDescricao(inDescQ);
+        p.setId(inId);
+        p.setDescricao(inDescP);
+        q.addPergunta(p);
+        
+        assertEquals(inNome, q.getNome());
+        assertEquals(inDescQ, q.getDescricao());
+        assertEquals(inId, q.getPerguntas().get(0).getId());
+        assertEquals(inDescP, q.getPerguntas().get(0).getDescricao());
     }
-    
-    @BeforeClass
-    public static void setUpClass()
-    {
-    }
-    
-    @AfterClass
-    public static void tearDownClass()
-    {
-    }
-    
-    @Before
-    public void setUp()
-    {
-    }
-    
-    @After
-    public void tearDown()
-    {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Estatistica.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Questionario&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interface</a> &gt; <span class="el_source">Estatistica.java</span></div><h1>Estatistica.java</h1><pre class="source lang-java linenums">package Interface;
+
+
+import java.awt.Dimension;
+
+public final class Estatistica extends javax.swing.JInternalFrame {
+
+<span class="nc" id="L8">    public Estatistica() {</span>
+<span class="nc" id="L9">        initComponents();</span>
+<span class="nc" id="L10">        inicio();</span>
+<span class="nc" id="L11">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L17">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L18">        jScrollPane2 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L19">        AreaDeQuesrionario = new javax.swing.JTextArea();</span>
+
+<span class="nc" id="L21">        setClosable(true);</span>
+<span class="nc" id="L22">        setMaximizable(true);</span>
+<span class="nc" id="L23">        setResizable(true);</span>
+<span class="nc" id="L24">        setTitle(&quot;Estatísticas&quot;);</span>
+
+<span class="nc" id="L26">        jLabel1.setText(&quot;Nome questionário&quot;);</span>
+
+<span class="nc" id="L28">        AreaDeQuesrionario.setColumns(20);</span>
+<span class="nc" id="L29">        AreaDeQuesrionario.setRows(5);</span>
+<span class="nc" id="L30">        jScrollPane2.setViewportView(AreaDeQuesrionario);</span>
+
+<span class="nc" id="L32">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L33">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L34">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L35">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L36">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L37">                .addContainerGap()</span>
+<span class="nc" id="L38">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L39">                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)</span>
+<span class="nc" id="L40">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L41">                        .addComponent(jLabel1)</span>
+<span class="nc" id="L42">                        .addGap(0, 0, Short.MAX_VALUE)))</span>
+<span class="nc" id="L43">                .addContainerGap())</span>
+        );
+<span class="nc" id="L45">        layout.setVerticalGroup(</span>
+<span class="nc" id="L46">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L47">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L48">                .addContainerGap()</span>
+<span class="nc" id="L49">                .addComponent(jLabel1)</span>
+<span class="nc" id="L50">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L51">                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)</span>
+<span class="nc" id="L52">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L55">        pack();</span>
+<span class="nc" id="L56">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea AreaDeQuesrionario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    // End of variables declaration//GEN-END:variables
+    
+    public void setPosicao() {
+<span class="nc" id="L66">        Dimension d = this.getDesktopPane().getSize();  </span>
+<span class="nc" id="L67">        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);</span>
+<span class="nc" id="L68">    }</span>
+    public void inicio(){
+<span class="nc" id="L70">        String a = &quot;&quot;;</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">        for (int i = 0; i &lt; 10; i++) {</span>
+            //a+=get();
+<span class="nc" id="L73">            a+=&quot;\n&quot;;</span>
+        }
+<span class="nc" id="L75">        AreaDeQuesrionario.setText(a);</span>
+<span class="nc" id="L76">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

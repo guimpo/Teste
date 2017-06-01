@@ -51,7 +51,11 @@ public class Questionario {
         return perguntas;
     }
 
-    void addPergunta(Pergunta p) {
+    /**
+     *
+     * @param p
+     */
+    public void addPergunta(Pergunta p) {
         perguntas.add(p);
     }
     

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DadosUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Questionario&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interface</a> &gt; <span class="el_source">DadosUsuario.java</span></div><h1>DadosUsuario.java</h1><pre class="source lang-java linenums">package Interface;
+
+
+import Programa.Usuario;
+import java.awt.Dimension;
+import javax.swing.JOptionPane;
+
+
+public class DadosUsuario extends javax.swing.JInternalFrame {
+<span class="nc" id="L10">    public DadosUsuario() {</span>
+<span class="nc" id="L11">        initComponents();</span>
+<span class="nc" id="L12">    }</span>
+    RespondePergunta rp;
+    
+<span class="nc" id="L15">    DadosUsuario(RespondePergunta aThis) {</span>
+<span class="nc" id="L16">        initComponents();</span>
+<span class="nc" id="L17">        rp = aThis;</span>
+<span class="nc" id="L18">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L24">        buttonGroup1 = new javax.swing.ButtonGroup();</span>
+<span class="nc" id="L25">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L26">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L27">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L28">        radiomasc = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L29">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L30">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L31">        radiofemea = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L32">        btIniciarQuestionario = new javax.swing.JButton();</span>
+<span class="nc" id="L33">        btBtCancelar = new javax.swing.JButton();</span>
+<span class="nc" id="L34">        Nome = new javax.swing.JTextField();</span>
+<span class="nc" id="L35">        Idade = new javax.swing.JTextField();</span>
+<span class="nc" id="L36">        profissao = new javax.swing.JTextField();</span>
+
+<span class="nc" id="L38">        setTitle(&quot;Dados do Usuário&quot;);</span>
+
+<span class="nc" id="L40">        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+
+<span class="nc" id="L42">        jLabel1.setText(&quot;Nome Completo:&quot;);</span>
+
+<span class="nc" id="L44">        jLabel2.setText(&quot;Idade:&quot;);</span>
+
+<span class="nc" id="L46">        buttonGroup1.add(radiomasc);</span>
+<span class="nc" id="L47">        radiomasc.setText(&quot;Masculino&quot;);</span>
+
+<span class="nc" id="L49">        jLabel4.setText(&quot;Profissão:&quot;);</span>
+
+<span class="nc" id="L51">        jLabel3.setText(&quot;Sexo:&quot;);</span>
+
+<span class="nc" id="L53">        buttonGroup1.add(radiofemea);</span>
+<span class="nc" id="L54">        radiofemea.setText(&quot;Feminino&quot;);</span>
+
+<span class="nc" id="L56">        btIniciarQuestionario.setText(&quot;Iniciar Questionário&quot;);</span>
+<span class="nc" id="L57">        btIniciarQuestionario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L59">                btIniciarQuestionarioActionPerformed(evt);</span>
+<span class="nc" id="L60">            }</span>
+        });
+
+<span class="nc" id="L63">        btBtCancelar.setText(&quot;Cancelar&quot;);</span>
+<span class="nc" id="L64">        btBtCancelar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L66">                btBtCancelarActionPerformed(evt);</span>
+<span class="nc" id="L67">            }</span>
+        });
+
+<span class="nc" id="L70">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L71">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L72">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L73">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L74">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L75">                .addGap(20, 20, 20)</span>
+<span class="nc" id="L76">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L77">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L78">                        .addComponent(jLabel2)</span>
+<span class="nc" id="L79">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L80">                        .addComponent(Idade))</span>
+<span class="nc" id="L81">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L82">                        .addComponent(btBtCancelar)</span>
+<span class="nc" id="L83">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L84">                        .addComponent(btIniciarQuestionario))</span>
+<span class="nc" id="L85">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L86">                        .addComponent(jLabel1)</span>
+<span class="nc" id="L87">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L88">                        .addComponent(Nome))</span>
+<span class="nc" id="L89">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L90">                        .addComponent(jLabel3)</span>
+<span class="nc" id="L91">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L92">                        .addComponent(radiomasc)</span>
+<span class="nc" id="L93">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L94">                        .addComponent(radiofemea)</span>
+<span class="nc" id="L95">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L96">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L97">                        .addComponent(jLabel4)</span>
+<span class="nc" id="L98">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L99">                        .addComponent(profissao)))</span>
+<span class="nc" id="L100">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L103">        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4});</span>
+
+<span class="nc" id="L105">        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btBtCancelar, btIniciarQuestionario});</span>
+
+<span class="nc" id="L107">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L108">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L109">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L110">                .addContainerGap()</span>
+<span class="nc" id="L111">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L112">                    .addComponent(jLabel1)</span>
+<span class="nc" id="L113">                    .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L114">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L115">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L116">                    .addComponent(jLabel2)</span>
+<span class="nc" id="L117">                    .addComponent(Idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L118">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L119">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L120">                    .addComponent(jLabel3)</span>
+<span class="nc" id="L121">                    .addComponent(radiomasc)</span>
+<span class="nc" id="L122">                    .addComponent(radiofemea))</span>
+<span class="nc" id="L123">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L124">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L125">                    .addComponent(jLabel4)</span>
+<span class="nc" id="L126">                    .addComponent(profissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L127">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L128">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L129">                    .addComponent(btIniciarQuestionario)</span>
+<span class="nc" id="L130">                    .addComponent(btBtCancelar))</span>
+<span class="nc" id="L131">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L134">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L135">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L136">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L137">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L138">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L139">                .addContainerGap()</span>
+<span class="nc" id="L140">                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L141">                .addContainerGap())</span>
+        );
+<span class="nc" id="L143">        layout.setVerticalGroup(</span>
+<span class="nc" id="L144">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                .addContainerGap()</span>
+<span class="nc" id="L147">                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L148">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L151">        pack();</span>
+<span class="nc" id="L152">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btIniciarQuestionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIniciarQuestionarioActionPerformed
+<span class="nc bnc" id="L155" title="All 10 branches missed.">        if(!&quot; &quot;.equals(Nome.getText()) &amp;&amp; !&quot; &quot;.equals(Idade.getText()) &amp;&amp; !&quot; &quot;.equals(profissao.getText()) &amp;&amp; (radiomasc.isSelected() || radiofemea.isSelected())){</span>
+<span class="nc" id="L156">            Usuario u = new Usuario();</span>
+<span class="nc" id="L157">            u.setIdade(Integer.parseInt(Idade.getText()));</span>
+<span class="nc" id="L158">            u.setNomeCompleto(Nome.getText());</span>
+<span class="nc" id="L159">            u.setProfissao(profissao.getText());</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">            if(radiomasc.isSelected())</span>
+<span class="nc" id="L161">                u.setSexo('M');</span>
+            else
+<span class="nc" id="L163">                u.setSexo('F');</span>
+<span class="nc" id="L164">            Questionario q = new Questionario(u, rp.p);</span>
+<span class="nc" id="L165">            q.carregarPerguntas(rp.questionario);</span>
+<span class="nc" id="L166">            rp.Carregar(q);</span>
+<span class="nc" id="L167">            q.setPosicao(rp);            </span>
+<span class="nc" id="L168">        }else {</span>
+<span class="nc" id="L169">            JOptionPane.showMessageDialog(null,&quot;É necessário preencher todos os campos&quot;,&quot;Erro&quot;,JOptionPane.CANCEL_OPTION);</span>
+        }
+<span class="nc" id="L171">    }//GEN-LAST:event_btIniciarQuestionarioActionPerformed</span>
+
+    private void btBtCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBtCancelarActionPerformed
+<span class="nc" id="L174">        this.dispose();</span>
+<span class="nc" id="L175">        rp.Destruir();</span>
+        
+<span class="nc" id="L177">    }//GEN-LAST:event_btBtCancelarActionPerformed</span>
+    public void setPosicao() {
+<span class="nc" id="L179">        Dimension d = this.getDesktopPane().getSize();  </span>
+<span class="nc" id="L180">        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);</span>
+<span class="nc" id="L181">    }</span>
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Idade;
+    private javax.swing.JTextField Nome;
+    private javax.swing.JButton btBtCancelar;
+    private javax.swing.JButton btIniciarQuestionario;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField profissao;
+    private javax.swing.JRadioButton radiofemea;
+    private javax.swing.JRadioButton radiomasc;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Questionario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Questionario&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interface</a> &gt; <span class="el_source">Questionario.java</span></div><h1>Questionario.java</h1><pre class="source lang-java linenums">package Interface;
+
+import Programa.Pergunta;
+import Programa.Persistencia;
+import Programa.Resposta;
+import Programa.Usuario;
+import java.awt.Dimension;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+public class Questionario extends javax.swing.JInternalFrame {
+
+    ArrayList&lt;Pergunta&gt; listaPerguntas;
+<span class="nc" id="L14">    int i = 0;</span>
+    Usuario user;
+    Persistencia pers;
+<span class="nc" id="L17">    public Questionario(Programa.Usuario u, Persistencia p) {</span>
+<span class="nc" id="L18">        user = u;</span>
+<span class="nc" id="L19">        pers = p;</span>
+<span class="nc" id="L20">        initComponents();</span>
+<span class="nc" id="L21">        btFinalizar.setVisible(false);</span>
+<span class="nc" id="L22">        btProximo.setVisible(false);</span>
+<span class="nc" id="L23">    }</span>
+    
+    RespondePergunta du;
+    
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L31">        buttonGroup1 = new javax.swing.ButtonGroup();</span>
+<span class="nc" id="L32">        NroQuestao = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L35">        Pergunta = new javax.swing.JTextPane();</span>
+<span class="nc" id="L36">        radioSim = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L37">        radioNao = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L38">        btProximo = new javax.swing.JButton();</span>
+<span class="nc" id="L39">        btFinalizar = new javax.swing.JButton();</span>
+<span class="nc" id="L40">        Resposta = new javax.swing.JLabel();</span>
+<span class="nc" id="L41">        btCancelarQuestionario = new javax.swing.JButton();</span>
+
+<span class="nc" id="L43">        setTitle(&quot;Questionário&quot;);</span>
+
+<span class="nc" id="L45">        NroQuestao.setText(&quot;n°&quot;);</span>
+
+<span class="nc" id="L47">        jLabel2.setText(&quot;:&quot;);</span>
+
+<span class="nc" id="L49">        Pergunta.setEditable(false);</span>
+<span class="nc" id="L50">        Pergunta.setBackground(new java.awt.Color(240, 240, 240));</span>
+<span class="nc" id="L51">        Pergunta.setBorder(null);</span>
+<span class="nc" id="L52">        jScrollPane1.setViewportView(Pergunta);</span>
+
+<span class="nc" id="L54">        buttonGroup1.add(radioSim);</span>
+<span class="nc" id="L55">        radioSim.setText(&quot;Sim&quot;);</span>
+<span class="nc" id="L56">        radioSim.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L58">                radioSimActionPerformed(evt);</span>
+<span class="nc" id="L59">            }</span>
+        });
+
+<span class="nc" id="L62">        buttonGroup1.add(radioNao);</span>
+<span class="nc" id="L63">        radioNao.setText(&quot;Não&quot;);</span>
+<span class="nc" id="L64">        radioNao.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L66">                radioNaoActionPerformed(evt);</span>
+<span class="nc" id="L67">            }</span>
+        });
+
+<span class="nc" id="L70">        btProximo.setText(&quot;Próximo&quot;);</span>
+<span class="nc" id="L71">        btProximo.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L73">                btProximoActionPerformed(evt);</span>
+<span class="nc" id="L74">            }</span>
+        });
+
+<span class="nc" id="L77">        btFinalizar.setText(&quot;Finalizar&quot;);</span>
+<span class="nc" id="L78">        btFinalizar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L80">                btFinalizarActionPerformed(evt);</span>
+<span class="nc" id="L81">            }</span>
+        });
+
+<span class="nc" id="L84">        Resposta.setText(&quot;Resposta:&quot;);</span>
+
+<span class="nc" id="L86">        btCancelarQuestionario.setText(&quot;Cancelar Questionário&quot;);</span>
+<span class="nc" id="L87">        btCancelarQuestionario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L89">                btCancelarQuestionarioActionPerformed(evt);</span>
+<span class="nc" id="L90">            }</span>
+        });
+
+<span class="nc" id="L93">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L94">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L95">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L96">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L97">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L98">                .addContainerGap()</span>
+<span class="nc" id="L99">                .addComponent(NroQuestao)</span>
+<span class="nc" id="L100">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L101">                .addComponent(jLabel2)</span>
+<span class="nc" id="L102">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L103">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L104">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L105">                        .addComponent(Resposta)</span>
+<span class="nc" id="L106">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L107">                        .addComponent(radioSim)</span>
+<span class="nc" id="L108">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L109">                        .addComponent(radioNao)</span>
+<span class="nc" id="L110">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L111">                        .addComponent(btCancelarQuestionario)</span>
+<span class="nc" id="L112">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L113">                        .addComponent(btFinalizar)</span>
+<span class="nc" id="L114">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L115">                        .addComponent(btProximo))</span>
+<span class="nc" id="L116">                    .addComponent(jScrollPane1))</span>
+<span class="nc" id="L117">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L120">        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btFinalizar, btProximo});</span>
+
+<span class="nc" id="L122">        layout.setVerticalGroup(</span>
+<span class="nc" id="L123">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L124">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L125">                .addContainerGap()</span>
+<span class="nc" id="L126">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L127">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L128">                        .addComponent(NroQuestao)</span>
+<span class="nc" id="L129">                        .addComponent(jLabel2))</span>
+<span class="nc" id="L130">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L131">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L132">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L133">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L134">                        .addComponent(btProximo)</span>
+<span class="nc" id="L135">                        .addComponent(btFinalizar)</span>
+<span class="nc" id="L136">                        .addComponent(btCancelarQuestionario))</span>
+<span class="nc" id="L137">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L138">                        .addComponent(radioSim)</span>
+<span class="nc" id="L139">                        .addComponent(radioNao)</span>
+<span class="nc" id="L140">                        .addComponent(Resposta)))</span>
+<span class="nc" id="L141">                .addContainerGap(15, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L144">        pack();</span>
+<span class="nc" id="L145">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
+<span class="nc bnc" id="L148" title="All 4 branches missed.">        if(radioSim.isSelected() || radioNao.isSelected()){</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">            if(i == (listaPerguntas.size()-1)){ //se for a ultima pergunta;</span>
+<span class="nc" id="L150">                btFinalizar.setVisible(true);</span>
+<span class="nc" id="L151">                btProximo.setVisible(false);</span>
+           }
+<span class="nc" id="L153">           Resposta r = new Resposta();</span>
+<span class="nc" id="L154">           r.setIdPergunta(NroQuestao.getText());</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">           if(radioSim.isSelected())</span>
+<span class="nc" id="L156">                r.setResp(&quot;Sim&quot;);</span>
+           else
+<span class="nc" id="L158">                r.setResp(&quot;Nao&quot;);</span>
+<span class="nc" id="L159">           user.addR(r);</span>
+           
+<span class="nc" id="L161">           mostraPergunta();</span>
+<span class="nc" id="L162">           radioSim.setSelected(false);</span>
+<span class="nc" id="L163">           radioNao.setSelected(false); </span>
+<span class="nc" id="L164">        }else {</span>
+<span class="nc" id="L165">            JOptionPane.showMessageDialog(null,&quot;Responda a pergunta seu Jegue!&quot;,&quot;Erro! =(&quot;,JOptionPane.CANCEL_OPTION);</span>
+        }
+<span class="nc" id="L167">    }//GEN-LAST:event_btProximoActionPerformed</span>
+
+    private void btFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinalizarActionPerformed
+<span class="nc bnc" id="L170" title="All 4 branches missed.">        if(radioSim.isSelected() || radioNao.isSelected()){</span>
+<span class="nc" id="L171">           Resposta r = new Resposta();</span>
+<span class="nc" id="L172">           r.setIdPergunta(NroQuestao.getText());</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">           if(radioSim.isSelected())</span>
+<span class="nc" id="L174">                r.setResp(&quot;Sim&quot;);</span>
+           else
+<span class="nc" id="L176">                r.setResp(&quot;Nao&quot;);</span>
+<span class="nc" id="L177">           user.addR(r);</span>
+<span class="nc" id="L178">           pers.salvarRespostas(pers.getQuestionario(), user);</span>
+           
+<span class="nc" id="L180">            JOptionPane.showMessageDialog(null,&quot;Questionario realizado com sucesso&quot;,&quot;Sucesso! =)&quot;,JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc" id="L181">            this.dispose();</span>
+            //faz as coisas
+<span class="nc" id="L183">            du.Destruir();</span>
+<span class="nc" id="L184">        }else {</span>
+<span class="nc" id="L185">            JOptionPane.showMessageDialog(null,&quot;Responda a pergunta seu Jegue!&quot;,&quot;Erro! =(&quot;,JOptionPane.CANCEL_OPTION);</span>
+        }
+<span class="nc" id="L187">    }//GEN-LAST:event_btFinalizarActionPerformed</span>
+
+    private void radioNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioNaoActionPerformed
+<span class="nc" id="L190">        System.out.println(i+&quot; = &quot;+(listaPerguntas.size()-1));</span>
+<span class="nc bnc" id="L191" title="All 2 branches missed.">        if(i != (listaPerguntas.size())){ </span>
+<span class="nc" id="L192">            btProximo.setVisible(true);</span>
+        }
+<span class="nc" id="L194">    }//GEN-LAST:event_radioNaoActionPerformed</span>
+
+    private void radioSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSimActionPerformed
+<span class="nc bnc" id="L197" title="All 2 branches missed.">        if(i != (listaPerguntas.size())){ </span>
+<span class="nc" id="L198">            btProximo.setVisible(true);</span>
+        }
+<span class="nc" id="L200">    }//GEN-LAST:event_radioSimActionPerformed</span>
+
+    private void btCancelarQuestionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarQuestionarioActionPerformed
+<span class="nc" id="L203">        this.dispose();</span>
+<span class="nc" id="L204">        du.Destruir();</span>
+
+<span class="nc" id="L206">    }//GEN-LAST:event_btCancelarQuestionarioActionPerformed</span>
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NroQuestao;
+    private javax.swing.JTextPane Pergunta;
+    private javax.swing.JLabel Resposta;
+    private javax.swing.JButton btCancelarQuestionario;
+    private javax.swing.JButton btFinalizar;
+    private javax.swing.JButton btProximo;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton radioNao;
+    private javax.swing.JRadioButton radioSim;
+    // End of variables declaration//GEN-END:variables
+
+
+    void setPosicao(RespondePergunta rp) {
+<span class="nc" id="L224">        Dimension d = this.getDesktopPane().getSize();</span>
+<span class="nc" id="L225">        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);</span>
+<span class="nc" id="L226">        du = rp;</span>
+<span class="nc" id="L227">    }</span>
+    
+    public void carregarPerguntas(Programa.Questionario questionario){        
+<span class="nc" id="L230">        listaPerguntas = questionario.getPerguntas();</span>
+<span class="nc" id="L231">        mostraPergunta();</span>
+<span class="nc" id="L232">    }</span>
+    
+    void mostraPergunta(){        
+<span class="nc" id="L235">        NroQuestao.setText(listaPerguntas.get(i).getId());</span>
+<span class="nc" id="L236">        Pergunta.setText(listaPerguntas.get(i).getDescricao());</span>
+<span class="nc" id="L237">        i++;</span>
+<span class="nc" id="L238">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
